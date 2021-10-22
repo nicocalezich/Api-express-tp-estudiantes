@@ -91,10 +91,7 @@ route.get(`/edad/:desde/:hasta`, (req, res) => {
   }
   else{
     res.send("No se pudo realizar la busqueda")
-  }
-
-
-  
+  }  
 })
 
 const ordenarPorEdad = (a,b) => {
