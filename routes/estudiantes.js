@@ -81,12 +81,7 @@ route.get(`/edad/:desde/:hasta`, (req, res) => {
   const hasta = req.params.hasta
   if (estudiantes && !isNaN(desde) && desde >= 0 && !isNaN(hasta) && hasta >= 0){  
     // const sorted = estudiantes.sort(ordenarPorEdad)
-    let buscados = []
-    estudiantes.forEach(estudiante => {
-      if (estudiante.edad >= desde && estudiante.edad <= hasta){
-        buscados.push(estudiante)
-      }
-    })
+    const buscados = estudiantes.filter(estudiante => estudiante.edad >= desde && estudiante.edad <= hasta)
     res.json(buscados)
   }
   else{
