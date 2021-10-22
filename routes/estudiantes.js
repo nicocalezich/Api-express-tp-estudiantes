@@ -80,7 +80,6 @@ route.get(`/edad/:desde/:hasta`, (req, res) => {
   const desde = req.params.desde
   const hasta = req.params.hasta
   if (estudiantes && !isNaN(desde) && desde >= 0 && !isNaN(hasta) && hasta >= 0){  
-    // const sorted = estudiantes.sort(ordenarPorEdad)
     const buscados = estudiantes.filter(estudiante => estudiante.edad >= desde && estudiante.edad <= hasta)
     res.json(buscados)
   }
@@ -88,9 +87,4 @@ route.get(`/edad/:desde/:hasta`, (req, res) => {
     res.send("No se pudo realizar la busqueda")
   }  
 })
-
-// const ordenarPorEdad = (a,b) => {
-//   return (a.edad > b.edad) ? 1 : ((b.edad > a.edad) ? -1 : 0)
-// } 
-
 module.exports = route
