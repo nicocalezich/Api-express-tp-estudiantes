@@ -80,9 +80,9 @@ route.get(`/edad/:desde/:hasta`, (req, res) => {
   const desde = req.params.desde
   const hasta = req.params.hasta
   if (estudiantes && !isNaN(desde) && desde >= 0 && !isNaN(hasta) && hasta >= 0){  
-    const sorted = estudiantes.sort(ordenarPorEdad)
+    // const sorted = estudiantes.sort(ordenarPorEdad)
     let buscados = []
-    sorted.forEach(estudiante => {
+    estudiantes.forEach(estudiante => {
       if (estudiante.edad >= desde && estudiante.edad <= hasta){
         buscados.push(estudiante)
       }
@@ -94,8 +94,8 @@ route.get(`/edad/:desde/:hasta`, (req, res) => {
   }  
 })
 
-const ordenarPorEdad = (a,b) => {
-  return (a.edad > b.edad) ? 1 : ((b.edad > a.edad) ? -1 : 0)
-} 
+// const ordenarPorEdad = (a,b) => {
+//   return (a.edad > b.edad) ? 1 : ((b.edad > a.edad) ? -1 : 0)
+// } 
 
 module.exports = route
