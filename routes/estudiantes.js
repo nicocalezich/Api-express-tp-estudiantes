@@ -75,7 +75,7 @@ route.get(`/:dni`, (req, res) => {
   res.json(estudiante)
 })
 
-//obtiene los estudiantes de determinado rango de edad, el formato sera "/n-n" correspondiendo n a una edad.
+//obtiene los estudiantes de determinado rango de edad
 route.get(`/edad/:desde/:hasta`, (req, res) => {
   const desde = req.params.desde
   const hasta = req.params.hasta
